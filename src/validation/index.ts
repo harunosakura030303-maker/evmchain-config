@@ -73,6 +73,15 @@ export function validateConfig(config: EvmConfig): ValidationResult {
       });
     }
 
+    // Warn about deprecated/sunset chains
+    if (DEPRECATED_CHAINS.has(chainId)) {
+      warnings.push({
+        chain: chainId,
+        field: 'chainId',
+        message: `Chain ${chain.name} (${chainId}): this network has been deprecated — ${DEPRECATED_CHAINS.get(chainId)}`,
+      });
+    }
+
     // Warn about missing explorer config
     if (!chain.explorerApiKey && !chain.testnet) {
       warnings.push({
@@ -98,6 +107,16 @@ export function validateConfig(config: EvmConfig): ValidationResult {
     warnings,
   };
 }
+
+// --- Deprecated chains ---
+
+const DEPRECATED_CHAINS = new Map<number, string>([
+  [3, 'Ropsten was shut down in Q4 2022'],
+  [4, 'Rinkeby was shut down in Q4 2022'],
+  [42, 'Kovan was shut down in Q4 2022'],
+  [5, 'Goerli was deprecated in Q1 2024 — use Sepolia instead'],
+  [80001, 'Mumbai was deprecated in Q1 2024 — use Amoy instead'],
+]);
 
 // --- Helpers ---
 
