@@ -1,8 +1,15 @@
 # evmchain-config
 
+[![npm version](https://badge.fury.io/js/evmchain-config.svg)](https://www.npmjs.com/package/evmchain-config)
+[![npm downloads](https://img.shields.io/npm/dw/evmchain-config.svg)](https://www.npmjs.com/package/evmchain-config)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/harunosakura030303-maker/evmchain-config/actions/workflows/ci.yml/badge.svg)](https://github.com/harunosakura030303-maker/evmchain-config/actions)
+
 > Universal EVM chain configuration manager for Hardhat, Foundry, viem, and ethers.
 
 Stop copy-pasting RPC URLs and private keys across config files. Load once, use everywhere.
+
+**[📖 Documentation](https://harunosakura030303-maker.github.io/evmchain-config/) · [npm](https://www.npmjs.com/package/evmchain-config) · [Changelog](https://github.com/harunosakura030303-maker/evmchain-config/releases)**
 
 ## Features
 
@@ -283,6 +290,19 @@ EVMCHAIN_TELEMETRY=false
 # or use the standard DO_NOT_TRACK
 DO_NOT_TRACK=1
 ```
+
+## Ecosystem
+
+| Package | Description | npm |
+|---------|-------------|-----|
+| [evmchain-config](https://github.com/harunosakura030303-maker/evmchain-config) | Core config loader | [![npm](https://badge.fury.io/js/evmchain-config.svg)](https://www.npmjs.com/package/evmchain-config) |
+| [hardhat-evmchain](https://github.com/harunosakura030303-maker/hardhat-evmchain) | Hardhat plugin | [![npm](https://badge.fury.io/js/hardhat-evmchain.svg)](https://www.npmjs.com/package/hardhat-evmchain) |
+| [evmchain-cli](https://github.com/harunosakura030303-maker/evmchain-cli) | CLI tools | [![npm](https://badge.fury.io/js/evmchain-cli.svg)](https://www.npmjs.com/package/evmchain-cli) |
+| [viem-multichain](https://github.com/harunosakura030303-maker/viem-multichain) | viem client factory | [![npm](https://badge.fury.io/js/viem-multichain.svg)](https://www.npmjs.com/package/viem-multichain) |
+
+## Starter template
+
+Get started instantly with the [hardhat-starter-evmchain](https://github.com/harunosakura030303-maker/hardhat-starter-evmchain) template — production-ready Hardhat setup with evmchain-config pre-configured.
 
 ## License
 
