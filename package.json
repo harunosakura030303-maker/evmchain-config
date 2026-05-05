@@ -1,0 +1,93 @@
+{
+  "name": "evmchain-config",
+  "version": "1.0.0",
+  "description": "Universal EVM chain configuration manager for Hardhat, Foundry, viem, and ethers. Stop writing boilerplate config — load once, use everywhere.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./adapters/hardhat": {
+      "import": "./dist/adapters/hardhat.mjs",
+      "require": "./dist/adapters/hardhat.js",
+      "types": "./dist/adapters/hardhat.d.ts"
+    },
+    "./adapters/viem": {
+      "import": "./dist/adapters/viem.mjs",
+      "require": "./dist/adapters/viem.js",
+      "types": "./dist/adapters/viem.d.ts"
+    },
+    "./adapters/ethers": {
+      "import": "./dist/adapters/ethers.mjs",
+      "require": "./dist/adapters/ethers.js",
+      "types": "./dist/adapters/ethers.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ethereum",
+    "evm",
+    "config",
+    "hardhat",
+    "foundry",
+    "viem",
+    "ethers",
+    "multichain",
+    "web3",
+    "blockchain",
+    "solidity",
+    "deployment",
+    "rpc",
+    "configuration",
+    "dotenv",
+    "chain-config"
+  ],
+  "author": "harunosakura030303-maker",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harunosakura030303-maker/evmchain-config"
+  },
+  "homepage": "https://github.com/harunosakura030303-maker/evmchain-config#readme",
+  "bugs": {
+    "url": "https://github.com/harunosakura030303-maker/evmchain-config/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "toml": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.2.0",
+    "eslint": "^8.56.0"
+  },
+  "peerDependencies": {
+    "viem": ">=2.0.0",
+    "ethers": ">=6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "viem": { "optional": true },
+    "ethers": { "optional": true }
+  }
+}
